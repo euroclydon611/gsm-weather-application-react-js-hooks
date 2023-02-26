@@ -13,10 +13,10 @@ const AppProvider = ({ children }) => {
   const [longitude, setLongitude] = useState("-2");
 
   //openWeatherApi keys and urls
-  const apikey = [API_KEY];//GET YOUR API KEY FROM OPENWEATHERAPI
+  const apikey = import.meta.env.VITE_FIRST_KEY;//GET YOUR API KEY FROM OPENWEATHERAPI
   const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apikey}`;
 
-  const secondApiKey = [ONECALL_API_KEY];//GET YOUR KEY FROM OPENWEATHERAPI
+  const secondApiKey = [import.meta.env.VITE_SECOND_KEY];//GET YOUR KEY FROM OPENWEATHERAPI
   const secondBaseUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,alerts&appid=${secondApiKey}&units=metric`;
 
   //function for the onChange event on the input (search) box
